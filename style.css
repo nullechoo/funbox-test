@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100;400;600&display=swap');
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+.wrapper {
+    display: flex;
+    width: 100vw;
+    height: 100%;
+    background-image: url('./Pattern.png');
+    background-repeat: repeat;
+    background-size: 50%;
+
+
+}
+
+.shadow-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    background: rgb(28, 28, 28);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%);
+
+}
+
+.cats {
+    display: flex;
+    flex-flow: row wrap;
+    width: 80%;
+    justify-content: center;
+}
+
+.title {
+    display: flex;
+    text-align: center;
+    color: #fff;
+    font-weight: 100;
+}
+
+.cats .cat {
+    cursor: pointer;
+    display: flex;
+    width: 320px;
+    height: 480px;
+    background-image: url('./Object.png');
+    background: linear-gradient(135deg, rgba(22, 152, 217, 1) 0%, rgba(22, 152, 217, 1) 6%, rgba(255, 255, 255, 1) 5%, rgba(255, 255, 255, 1) 100%);
+    
+    clip-path:
+        polygon(0% 50px,
+            /* верхняя левая */
+            50px 0%,
+            /* верхняя левая */
+            calc(100% - 0px) 0%,
+            /* верхняя правая */
+            100% 20px,
+            /* верхняя правая */
+            100% calc(100% - 20px),
+            /* нижняя правая */
+            calc(100% - 0px) 100%,
+            /* нижняя правая */
+            20px 100%,
+            /* нижняя левая */
+            0 calc(100% - 0px)
+            /* нижняя левая */
+        );
+    border-radius: 10px;
+    border: 5px solid #1698D9;
+    transition: border .25s ease-in-out;
+    transition: background .25s ease-in-in;
+}
+
+@media screen and (max-width: 649px) {
+    .cats .cat {
+        margin: 0 0 80px 0;
+    }
+}
+
+@media screen and (max-width: 433px) {
+    .cats .cat {
+        width: 300px !important;
+        height: 450px !important;
+    }
+    .cat .innercat {
+        width: 300px !important;
+        height: 450px !important;
+    }
+}
+
+.cat .innercat {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 320px;
+    height: 480px;
+    background-image: url('./Object.png');
+    
+    
+}
+
+.innercat .text * {
+    margin: 0;
+    padding: 0;
+}
+
+.text {
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 20px !important;
+    padding-left: 50px !important;
+}
+
+.text h1 {
+    font-size: 48px;
+    font-weight: bold;
+    position: relative;
+    left: -3px;
+}
+
+.text h4 {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px !important;
+}
+
+.text span {
+    font-size: 16px;
+    color: #666666;
+}
+
+.text p {
+    color: #666666;
+}
+
+.text p span {
+    font-weight: bold;
+}
+
+.innercat .weight {
+    z-index: 2;
+    width: 80px;
+    height: 80px;
+    background-color: #1698D9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    margin: 0px 10px 10px 0px;
+    transition: all .25s ease-in-out;
+}
+
+.weight span:nth-child(1) {
+    font-size: 40px;
+    line-height: 35px;
+}
+
+.weight span:nth-child(2) {
+    font-size: 22px;
+    margin: 0px;
+}
+
+.bottom {
+    color: #fff;
+}
+.cats .support {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 45px 80px 45px;
+}
+.support span {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.cat.active {
+    border: 5px solid #D91667 !important;
+    background: linear-gradient(135deg, #D91667 0%, #D91667 6%, rgba(255, 255, 255, 1) 5%, rgba(255, 255, 255, 1) 100%);
+}
+.weight.active {
+    background-color: #D91667;
+}
+
+.cat.disabled {
+    cursor: not-allowed;
+    border: 5px solid #B3B3B3 !important;
+    background: linear-gradient(135deg, #B3B3B3 0%, #B3B3B3 6%, rgba(255, 255, 255, 1) 5%, rgba(255, 255, 255, 1) 100%);
+}
+
+.cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(179,179,179, 0.5);
+}
+
+.weight.disabled {
+    background-color: #B3B3B3;
+}
+
+.bottom.disabled {
+    color: #FFFF66;
+}
+.text.disabled {
+    color: #B3B3B3 !important;
+}
